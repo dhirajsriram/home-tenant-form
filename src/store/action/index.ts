@@ -1,15 +1,12 @@
 interface Actions {
 	type: string;
+	payload: any;
 }
 
-export const increment = (): Actions => {
+export const setLanguage = (language:string): Actions => {
 	return {
-		type: 'INCREMENT'
+		type: 'INCREMENT',
+		payload: {language}
 	};
 };
 
-export const decrement = (): Actions => {
-	return {
-		type: 'DECREMENT'
-	};
-};

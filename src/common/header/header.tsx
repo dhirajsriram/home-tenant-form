@@ -1,58 +1,117 @@
-import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import { Drawer } from '@material-ui/core';
-import SideMenu from './sidemenu/sidemenu';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Button from "@material-ui/core/Button";
+
+import { SETLANGUAGE } from "../../store/constants/constants";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { useSelector,useDispatch } from 'react-redux';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
     },
+    menuBar: {
+      boxShadow: "none",
+    },
+    menuToolBar: {
+      padding: "15px",
+      display: "flex",
+      justifyContent: "space-between",
+    },
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    title: {
-      flexGrow: 1,
+    menuIcon: {
+      width: "60px",
     },
-  }),
+    languageButton: {
+      padding: "0px 12px",
+    },
+    languageFlag: {
+      width: "25px",
+      marginRight: "10px",
+    },
+    language:{
+      fontSize: "18px"
+    }
+  })
 );
 
 export default function Header() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    left: false,
-  });
-  const toggleDrawer = (open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent,
-  ) => {
-    if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' ||
-        (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-    setState({"left": open });
-}
+  const classes = useStyles({});
+  const dispatch = useDispatch()
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const language = useSelector((state:any) => state.reducer.language)
+
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const selectLanguage = (e: any, lang: string) => {
+    dispatch({ type: SETLANGUAGE, payload: {language : lang} });
+    setAnchorEl(null);
+  };
+
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="inherit">
-        <Toolbar>
-          <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+      
+      <AppBar position="static" color="inherit" className={classes.menuBar}>
+        <Toolbar className={classes.menuToolBar}>
+          <IconButton className={classes.menuButton}>
+            <img
+              src={require("../../assets/logo.png")}
+              className={classes.menuIcon}
+              alt="Home HT"
+            />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Sample App
-          </Typography>
+          <div className={classes.languageButton}>
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              <img
+                src={require(`../../assets/${language.toLowerCase()}-flag.svg`)}
+                className={classes.languageFlag}
+                alt={language}
+              />
+              <span className={classes.language}>{language}</span>
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={(e) => selectLanguage(e, "EN")}>
+                <img
+                  src={require("../../assets/en-flag.svg")}
+                  className={classes.languageFlag}
+                  alt="EN"
+                ></img>
+                EN
+              </MenuItem>
+              <MenuItem onClick={(e) => selectLanguage(e, "DE")}>
+                <img
+                  src={require("../../assets/de-flag.svg")}
+                  className={classes.languageFlag}
+                  alt="DE"
+                ></img>
+                DE
+              </MenuItem>
+            </Menu>
+          </div>
         </Toolbar>
-        <Drawer open={state.left} onClose={toggleDrawer(false)}>
-        <SideMenu toggleDrawer={toggleDrawer}></SideMenu>
-      </Drawer>
       </AppBar>
     </div>
   );

@@ -1,8 +1,8 @@
-import renameReducer from './rename';
+import reducer from './reducer';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
-	renameReducer
+	reducer
 });
 
 export default allReducers;
