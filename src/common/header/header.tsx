@@ -77,7 +77,7 @@ export default function Header() {
           </IconButton>
           <div>
             <Button
-              aria-controls="simple-menu"
+              aria-controls="language-menu"
               className={classes.languageButton}
               aria-haspopup="true"
               onClick={handleClick}
@@ -90,7 +90,7 @@ export default function Header() {
               <span className={classes.language}>{language}</span>
             </Button>
             <Menu
-              id="simple-menu"
+              id="language-menu"
               anchorEl={anchorEl}
               keepMounted
               open={Boolean(anchorEl)}
