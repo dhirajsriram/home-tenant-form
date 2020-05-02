@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from '../common/loader/loader';
 
-const Home: React.FC = () => {
+const Form: React.FC = () => {
   return (
     <div className="home-container">
       <Loader></Loader>
@@ -9,4 +9,4 @@ const Home: React.FC = () => {
   );
 }
 
-export default Home;
+export default Form;

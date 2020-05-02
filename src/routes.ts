@@ -1,15 +1,15 @@
 import React from 'react';
-const Home = React.lazy(() => import('./pages/home'));
-const Fourzerofour = React.lazy(() => import('./pages/fourzerofour'));
+const Form = React.lazy(() => import('./pages/Form'));
+const FourZeroFour = React.lazy(() => import('./pages/FourZero'));
 
 const routes: Object[] = [
 	{
 		path: '/:id',
-		component: Fourzerofour
+		component: FourZeroFour
 	},
 	{
 		path: '/',
-		component: Home
+		component: Form
 	}
 ];
 

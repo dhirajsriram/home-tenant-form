@@ -31,6 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     languageButton: {
       padding: "0px 12px",
+      margin: "12px",
+      boxShadow: "0 5px 26px rgba(177,190,201,.48)"
     },
     languageFlag: {
       width: "25px",
@@ -73,9 +75,10 @@ export default function Header() {
               alt="Home HT"
             />
           </IconButton>
-          <div className={classes.languageButton}>
+          <div>
             <Button
               aria-controls="simple-menu"
+              className={classes.languageButton}
               aria-haspopup="true"
               onClick={handleClick}
             >

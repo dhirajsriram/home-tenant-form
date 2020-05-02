@@ -8,3 +8,7 @@
 		}
 	}
 }
+
+@mixin boxShadow(){
+	box-shadow: 0 3px 10px rgba(177,190,201,.48);
+}
