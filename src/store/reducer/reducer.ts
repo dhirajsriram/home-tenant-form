@@ -22,7 +22,7 @@ interface InitialState {
 }
 
 interface field {
-  value: string;
+  value: string|null;
   valid: boolean;
 }
 
@@ -31,23 +31,23 @@ const initialState: InitialState = {
   step: 0,
   form: {
     "first-name": {
-      value: "",
+      value: null,
       valid: false,
     },
     "last-name": {
-      value: "",
+      value: null,
       valid: false,
     },
     "email": {
-      value: "",
+      value: null,
       valid: false,
     },
     "phone": {
-      value: "",
+      value: null,
       valid: false,
     },
     "salary": {
-      value: "",
+      value: null,
       valid: false,
     },
   },

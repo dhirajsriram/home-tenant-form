@@ -16,17 +16,18 @@ function Name() {
       <div className="form-text-input-block">
         <TextInput
           id="first-name"
+          type="text"
           placeholder="First Name"
           pattern={/^[a-zA-Z]+$/}
         ></TextInput>
         <TextInput
           id="last-name"
+          type="text"
           placeholder="Last Name"
           pattern={/^[a-zA-Z]+$/}
         ></TextInput>
       </div>
       <div className="form-button-container">
-        {console.log(form)}
         <Button
           variant="contained"
           color="primary"

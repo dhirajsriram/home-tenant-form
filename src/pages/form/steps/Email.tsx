@@ -13,7 +13,7 @@ function Email() {
   return (
     <fieldset className="form-fieldset">
       <legend className="form-legend">Enter your Email Address</legend>
-      <TextInput id="email" placeholder="Email" pattern={/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/}/>
+      <TextInput type="text" id="email" placeholder="Email" pattern={/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/}/>
       <div className="form-button-container">
       <Button variant="contained" color="primary" onClick={(e) => emailSubmit(e)} disabled={!(form['email'].valid)}>
         Next
