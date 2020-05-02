@@ -46,6 +46,7 @@ export default function VerticalLinearStepper() {
               {" "}
               <Button
                 aria-haspopup="true"
+                className="default-text"
                 key={label}
                 onClick={(e) => setStep(index)}
               >

@@ -22,12 +22,25 @@
       margin-bottom: $twenty;
     }
 
+    .form-text-input-block{
+      display: flex;
+    }
+
     .form-label {
       visibility: hidden;
     }
 
     .form-input {
       @include inputContainer;
+      &.invalid{
+        border: 2px solid $red;
+      }
+    }
+
+    .form-invalid{
+      color: $dark-gray;
+      padding-top: 10px;
+      color: $red;
     }
 
     .radio-block {

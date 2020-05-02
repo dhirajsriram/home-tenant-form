@@ -12,8 +12,18 @@ function Name() {
   return (
     <fieldset className="form-fieldset">
       <legend className="form-legend">Enter your name</legend>
-      <TextInput id="first-name" placeholder="First Name"></TextInput>
-      <TextInput id="last-name" placeholder="Last Name"></TextInput>
+      <div className="form-text-input-block">
+        <TextInput
+          id="first-name"
+          placeholder="First Name"
+          pattern={/^[a-zA-Z]+$/}
+        ></TextInput>
+        <TextInput
+          id="last-name"
+          placeholder="Last Name"
+          pattern={/^[a-zA-Z]+$/}
+        ></TextInput>
+      </div>
       <div className="form-button-container">
         <Button
           variant="contained"

@@ -22,6 +22,7 @@
   border: 0px solid $light-gray;
   @include boxShadow;
   &:focus {
-    outline: 2px solid $dark-gray;
+    outline: 0px;
+    border: 2px solid $dark-gray;
   }
 }
