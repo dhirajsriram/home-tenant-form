@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP, SETFORMVALUE } from "../../../store/constants/constants";
@@ -7,10 +7,14 @@ function Salary() {
   const dispatch = useDispatch();
   const form = useSelector((state: any) => state.reducer.form);
   const salarySubmit = (e: any) => {
-    dispatch({ type: SETSTEP, payload: { step: 2 } });
+    dispatch({ type: SETSTEP, payload: { step: 4 } });
   };
   const [value, setValue] = React.useState("");
 
+  useEffect(()=>{
+    setValue(form['salary'].value)
+  },[form])
+  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     let value = (event.target as HTMLInputElement).value
     setValue(value);
@@ -37,9 +41,9 @@ function Salary() {
     <fieldset className="form-fieldset">
       <legend className="form-legend">Enter your Salary</legend>
       <div className="radio-block">
-        {console.log(value)}
         <RadioGroup
           aria-label="gender"
+          className="radio-group"
           name="gender1"
           value={value}
           onChange={handleChange}
@@ -67,6 +71,7 @@ function Salary() {
         >
           Next
         </Button>
+        <span className="press-enter-span">or press enter</span>
       </div>
     </fieldset>
   );

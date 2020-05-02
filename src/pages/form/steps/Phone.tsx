@@ -13,7 +13,7 @@ function Phone() {
   return (
     <fieldset className="form-fieldset">
       <legend className="form-legend">Enter your phone</legend>
-      <TextInput type="number" id="phone" placeholder="Phone" pattern={/^(?:\+\d{1,3}|0\d{1,3}|00\d{1,2})?(?:\s?\(\d+\))?(?:[-\/\s.]|\d)+$/}/>
+      <TextInput type="number" id="phone" placeholder="Phone" pattern={/^(?:\+\d{1,3}|0\d{1,3}|00\d{1,2})?(?:\s?\(\d+\))?(?:[-\s.]|\d)+$/}/>
       <div className="form-button-container">
         <Button
           variant="contained"
@@ -23,6 +23,7 @@ function Phone() {
         >
           Next
         </Button>
+        <span className="press-enter-span">or press enter</span>
       </div>
     </fieldset>
   );

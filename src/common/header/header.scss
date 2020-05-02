@@ -1,0 +1,32 @@
+@import "./../../scss/main.scss";
+
+.menu-container {
+  flex-grow: 1;
+  .menu-bar {
+    box-shadow: none;
+    .menu-toolbar {
+      padding: 0px;
+      display: flex;
+      justify-content: space-between;
+      .menu-button{
+          padding:0px;
+      }
+      .menu-icon {
+        width: 60px;
+      }
+    }
+  }
+}
+
+.language-button {
+  padding: 0px 12px;
+  margin: 12px;
+  @include boxShadow();
+}
+.language-flag {
+  width: 25px !important;
+  margin-right: 10px;
+}
+.language {
+  font-size: "18px";
+}

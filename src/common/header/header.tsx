@@ -7,45 +7,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 
 import { SETLANGUAGE } from "../../store/constants/constants";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useSelector,useDispatch } from 'react-redux';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuBar: {
-      boxShadow: "none",
-    },
-    menuToolBar: {
-      padding: "15px",
-      display: "flex",
-      justifyContent: "space-between",
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    menuIcon: {
-      width: "60px",
-    },
-    languageButton: {
-      padding: "0px 12px",
-      margin: "12px",
-      boxShadow: "0 5px 26px rgba(177,190,201,.48)"
-    },
-    languageFlag: {
-      width: "25px",
-      marginRight: "10px",
-    },
-    language:{
-      fontSize: "18px"
-    }
-  })
-);
+import './header.scss';
 
 export default function Header() {
-  const classes = useStyles({});
   const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const language = useSelector((state:any) => state.reducer.language)
@@ -64,30 +29,30 @@ export default function Header() {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="menu-container">
       
-      <AppBar position="static" color="inherit" className={classes.menuBar}>
-        <Toolbar className={classes.menuToolBar}>
-          <IconButton className={classes.menuButton}>
+      <AppBar position="static" color="inherit" className="menu-bar">
+        <Toolbar className="menu-toolbar">
+          <IconButton className="menu-button">
             <img
               src={require("../../assets/logo.png")}
-              className={classes.menuIcon}
+              className="menu-icon"
               alt="Home HT"
             />
           </IconButton>
-          <div>
+          <div className="menu-content">
             <Button
               aria-controls="language-menu"
-              className={classes.languageButton}
+              className="language-button"
               aria-haspopup="true"
               onClick={handleClick}
             >
               <img
                 src={require(`../../assets/${language.toLowerCase()}-flag.svg`)}
-                className={classes.languageFlag}
+                className="language-flag"
                 alt={language}
               />
-              <span className={classes.language}>{language}</span>
+              <span className="language">{language}</span>
             </Button>
             <Menu
               id="language-menu"
@@ -99,7 +64,7 @@ export default function Header() {
               <MenuItem onClick={(e) => selectLanguage(e, "EN")}>
                 <img
                   src={require("../../assets/en-flag.svg")}
-                  className={classes.languageFlag}
+                  className="language-flag"
                   alt="EN"
                 ></img>
                 EN
@@ -107,7 +72,7 @@ export default function Header() {
               <MenuItem onClick={(e) => selectLanguage(e, "DE")}>
                 <img
                   src={require("../../assets/de-flag.svg")}
-                  className={classes.languageFlag}
+                  className="language-flag"
                   alt="DE"
                 ></img>
                 DE

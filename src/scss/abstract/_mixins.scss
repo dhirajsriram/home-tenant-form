@@ -14,7 +14,6 @@
 }
 
 @mixin inputContainer() {
-  max-width: 100%;
   border-radius: 10px;
   font-size: $twenty;
   margin-right: 25px;
@@ -23,5 +22,8 @@
   &:focus {
     outline: 0px;
     border: 2px solid $dark-gray;
+  }
+  @media screen and (max-width: 800px) {
+    margin-right: 0px;
   }
 }

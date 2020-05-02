@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import Email from "./steps/Email";
 import Phone from "./steps/Phone";
 import Salary from "./steps/Salary";
+import Review from "./steps/Review";
 
 const Form: React.FC = () => {
   const activeStep = useSelector((state: any) => state.reducer.step);
@@ -18,6 +19,8 @@ const Form: React.FC = () => {
         return <Phone />;
       case 3:
         return <Salary />;
+      case 4:
+        return <Review />;
       default:
         break;
     }

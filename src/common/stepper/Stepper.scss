@@ -1,0 +1,6 @@
+.stepper-container {
+  width: 20%;
+  @media screen and (max-width: 800px){
+      display: none  
+  }
+}

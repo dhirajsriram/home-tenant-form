@@ -18,6 +18,7 @@ function Email() {
       <Button variant="contained" color="primary" onClick={(e) => emailSubmit(e)} disabled={!(form['email'].valid)}>
         Next
       </Button>
+      <span className="press-enter-span">or press enter</span>
       </div>
     </fieldset>
   );
