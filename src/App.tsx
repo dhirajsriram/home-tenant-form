@@ -1,29 +1,43 @@
 import React, { Component } from "react";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Loader from "./common/loader/loader";
 import routes from "./routes";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { grey } from "@material-ui/core/colors";
+import "./App.scss";
 
 const Header = React.lazy(() => import("./common/header/header"));
+const Stepper = React.lazy(() => import("./common/stepper/Stepper"));
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: grey[800],
+    },
+  },
+});
 
 class App extends Component {
   render() {
     return (
-        <React.Suspense fallback={<Loader />}>
-        <Header/>
-        <div className="main-container">
-            <Switch>
-              {routes.map((route:any,index:number) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  render={(props: any) => (
-                    <route.component {...props} />
-                  )}
-                />
-              ))}
-            </Switch>
+      <React.Suspense fallback={<Loader />}>
+        <MuiThemeProvider theme={theme}>
+          <div className="main-container">
+            <Header />
+            <div className="main-content">
+              <Stepper />
+              <Switch>
+                {routes.map((route: any, index: number) => (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    render={(props: any) => <route.component {...props} />}
+                  />
+                ))}
+              </Switch>
+            </div>
           </div>
-        </React.Suspense>
+        </MuiThemeProvider>
+      </React.Suspense>
     );
   }
 }

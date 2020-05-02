@@ -1,0 +1,27 @@
+@import "./../../scss/main.scss";
+
+.form-fieldset {
+  border: 0;
+  .form-label {
+    font-family: "Circular Bold";
+    font-size: 28px;
+    line-height: 32px;
+    color: rgb(59, 59, 59);
+    text-align: left;
+    margin-bottom: $twenty;
+  }
+  .form-input {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: $twenty;
+    margin-right: 25px;
+    border: 0px solid $light-gray;
+    @include boxShadow;
+    &:focus {
+      outline: 2px solid $dark-gray;
+    }
+  }
+  .form-button-container{
+    padding-top: 50px;
+  }
+}

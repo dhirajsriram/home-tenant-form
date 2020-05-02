@@ -1,10 +1,13 @@
 import React from 'react';
-import Loader from '../common/loader/loader';
+import Name from './steps/Name';
+import './Form.scss';
 
 const Form: React.FC = () => {
   return (
     <div className="home-container">
-      <Loader></Loader>
+      <form>
+        <Name/>
+      </form>
     </div>
   );
 }
