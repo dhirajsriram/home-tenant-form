@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP } from "../../../store/constants/constants";
 import TextInput from "../../../common/formsElement/TextInput";
 
 function Name() {
   const dispatch = useDispatch();
+  const form = useSelector((state: any) => state.reducer.form);
   const nameSubmit = (e: any) => {
     dispatch({ type: SETSTEP, payload: { step: 1 } });
   };
@@ -25,10 +26,12 @@ function Name() {
         ></TextInput>
       </div>
       <div className="form-button-container">
+        {console.log(form)}
         <Button
           variant="contained"
           color="primary"
           onClick={(e) => nameSubmit(e)}
+          disabled={!(form['first-name'].valid && form['last-name'].valid)}
         >
           Next
         </Button>

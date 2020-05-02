@@ -1,10 +1,25 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { SETFORMVALUE } from "../../store/constants/constants";
 
 function TextInput(props) {
   const [valid, setValid] = useState(true);
+  const dispatch = useDispatch();
 
   const validate = (e) => {
-    setValid(props.pattern.test(e.target.value) && e.target.value.trim() !== "");
+    let validity =
+      props.pattern.test(e.target.value) && e.target.value.trim() !== "";
+    setValid(validity);
+    dispatch({
+      type: SETFORMVALUE,
+      payload: {
+        field: props.id,
+        value: {
+          value: e.target.value,
+          valid: validity,
+        },
+      },
+    });
   };
   return (
     <div>

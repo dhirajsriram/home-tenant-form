@@ -49,6 +49,7 @@ export default function VerticalLinearStepper() {
                 className="default-text"
                 key={label}
                 onClick={(e) => setStep(index)}
+                disabled={activeStep < index}
               >
                 {label}
               </Button>
