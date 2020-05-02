@@ -1,14 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@material-ui/core";
 import FaceIcon from "@material-ui/icons/Face";
 import EmailIcon from "@material-ui/icons/Email";
 import MoneyIcon from "@material-ui/icons/Money";
 import CallIcon from "@material-ui/icons/Call";
+import { SETSTEP } from "../../../store/constants/constants";
 
 function Review() {
   const form = useSelector((state: any) => state.reducer.form);
   const formSubmit = (e: any) => {};
+  const dispatch = useDispatch();
   const getIcon = (value: string) => {
     switch (value) {
       case "first-name":
@@ -23,6 +25,9 @@ function Review() {
         return <MoneyIcon />;
     }
   };
+  const back = (e:any) => {
+    dispatch({type : SETSTEP, payload: {step: 3}})
+  }
   return (
     <fieldset className="form-fieldset">
       <div className="form-legend">Kindly review your input</div>
@@ -45,7 +50,9 @@ function Review() {
         >
           Submit
         </Button>
-        <span className="press-enter-span">or press enter</span>
+        <Button variant="contained" color="primary" onClick={(e) => back(e)}>
+          Back
+        </Button>
       </div>
     </fieldset>
   );

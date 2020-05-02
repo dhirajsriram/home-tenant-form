@@ -82,12 +82,10 @@ $radio-padding: 15px 25px 15px 15px;
 
     .form-button-container {
       padding-top: 50px;
-      .press-enter-span {
-        margin-left: 20px;
-        color: grey;
-        font-size: 13px;
-      }
+      display: flex;
+      justify-content: space-between;
     }
+    
     .form-review-container {
       padding: 12px;
       border-radius: 10px;

@@ -9,6 +9,9 @@ function Salary() {
   const salarySubmit = (e: any) => {
     dispatch({ type: SETSTEP, payload: { step: 4 } });
   };
+  const back = (e:any) => {
+    dispatch({type : SETSTEP, payload: {step: 2}})
+  }
   const [value, setValue] = React.useState("");
 
   useEffect(()=>{
@@ -29,6 +32,8 @@ function Salary() {
       },
     });
   };
+
+  
 
   const salaries = [
     { value: "0-1000", id: "zero-to-thousand" },
@@ -71,7 +76,13 @@ function Salary() {
         >
           Next
         </Button>
-        <span className="press-enter-span">or press enter</span>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={(e) => back(e)}
+        >
+          Back
+        </Button>
       </div>
     </fieldset>
   );

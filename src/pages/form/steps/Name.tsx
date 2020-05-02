@@ -36,7 +36,6 @@ function Name() {
         >
           Next
         </Button>
-        <span className="press-enter-span">or press enter</span>
       </div>
     </fieldset>
   );

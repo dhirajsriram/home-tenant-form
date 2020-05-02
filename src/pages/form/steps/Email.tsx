@@ -10,6 +10,9 @@ function Email() {
   const emailSubmit = (e:any) => {
     dispatch({type : SETSTEP, payload: {step: 2}})
   }
+  const back = (e:any) => {
+    dispatch({type : SETSTEP, payload: {step: 0}})
+  }
   return (
     <fieldset className="form-fieldset">
       <legend className="form-legend">Enter your Email Address</legend>
@@ -18,7 +21,9 @@ function Email() {
       <Button variant="contained" color="primary" onClick={(e) => emailSubmit(e)} disabled={!(form['email'].valid)}>
         Next
       </Button>
-      <span className="press-enter-span">or press enter</span>
+      <Button variant="contained" color="primary" onClick={(e) => back(e)}>
+        Back
+      </Button>
       </div>
     </fieldset>
   );
