@@ -4,21 +4,20 @@ import { useDispatch } from "react-redux";
 import { SETSTEP } from "../../../store/constants/constants";
 import TextInput from "../../../common/formsElement/TextInput";
 
-function Name() {
+function Phone() {
   const dispatch = useDispatch();
-  const nameSubmit = (e: any) => {
-    dispatch({ type: SETSTEP, payload: { step: 1 } });
+  const phoneSubmit = (e: any) => {
+    dispatch({ type: SETSTEP, payload: { step: 3 } });
   };
   return (
     <fieldset className="form-fieldset">
-      <legend className="form-legend">Enter your name</legend>
-      <TextInput id="first-name" placeholder="First Name"></TextInput>
-      <TextInput id="last-name" placeholder="Last Name"></TextInput>
+      <legend className="form-legend">Enter your phone</legend>
+      <TextInput id="phone" placeholder="Phone" />
       <div className="form-button-container">
         <Button
           variant="contained"
           color="primary"
-          onClick={(e) => nameSubmit(e)}
+          onClick={(e) => phoneSubmit(e)}
         >
           Next
         </Button>
@@ -27,4 +26,4 @@ function Name() {
   );
 }
 
-export default Name;
+export default Phone;

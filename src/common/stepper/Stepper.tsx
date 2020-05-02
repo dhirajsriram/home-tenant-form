@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function getSteps() {
-  return ['Name', 'Create an ad group', 'Create an ad'];
+  return ['Name', 'Email', 'Phone', 'Salary'];
 }
 
 export default function VerticalLinearStepper() {

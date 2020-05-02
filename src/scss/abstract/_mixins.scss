@@ -1,14 +1,27 @@
 @mixin loaderAnim($animation-name) {
-	@keyframes #{$animation-name} {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
+  @keyframes #{$animation-name} {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
-@mixin boxShadow(){
-	box-shadow: 0 3px 10px rgba(177,190,201,.48);
+@mixin boxShadow() {
+  box-shadow: 0 3px 10px rgba(177, 190, 201, 0.48);
+}
+
+@mixin inputContainer() {
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: $twenty;
+  margin-right: 25px;
+  border: 0px solid $light-gray;
+  @include boxShadow;
+  &:focus {
+    outline: 2px solid $dark-gray;
+  }
 }
