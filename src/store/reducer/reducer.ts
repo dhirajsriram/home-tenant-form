@@ -28,7 +28,7 @@ interface field {
 
 const initialState: InitialState = {
   language: "EN",
-  step: 5,
+  step: 0,
   form: {
     "first-name": {
       value: null,
