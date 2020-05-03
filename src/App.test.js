@@ -43,7 +43,7 @@ describe("<App>", () => {
     );
     await wait(() => expect(getByText(hometext)).toBeDefined());
   });
-  it("Default routes to be navigated to first step of the form", async () => {
+  it("Renders without exploding", async () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

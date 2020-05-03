@@ -1,5 +1,10 @@
 import { setStep, setFormValue, setInitial, setLanguage } from "./index";
-import { SETSTEP, SETINITIAL, SETFORMVALUE, SETLANGUAGE } from "../constants/constants";
+import {
+  SETSTEP,
+  SETINITIAL,
+  SETFORMVALUE,
+  SETLANGUAGE,
+} from "../constants/constants";
 
 let mockStep = {
   type: SETSTEP,
@@ -9,7 +14,8 @@ let mockStep = {
 let mockFromValue = {
   type: SETFORMVALUE,
   payload: {
-    "first-name": {
+    field: "first-name",
+    value: {
       value: "XXXX",
       valid: true,
     },
@@ -22,10 +28,9 @@ let mockInitValue = {
 };
 
 let mockLanguage = {
-    type: SETLANGUAGE,
-    payload: { language : "en" },
+  type: SETLANGUAGE,
+  payload: { language: "en" },
 };
-  
 
 describe("Actions.js", () => {
   it("Creates the action for step", () => {

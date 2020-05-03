@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form> Renders without exploding 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Suspense
+    fallback={<div />}
+  >
+    <MemoryRouter
+      initialEntries={
+        Array [
+          "/",
+        ]
+      }
+      keyLength={0}
+    >
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "canGo": [Function],
+            "createHref": [Function],
+            "entries": Array [
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+            ],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "index": 0,
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <Form>
+          <div
+            className="form-container"
+          >
+            <form>
+              <Name>
+                <fieldset
+                  className="form-fieldset"
+                >
+                  <legend
+                    className="form-legend"
+                  >
+                    Enter your name
+                  </legend>
+                  <div
+                    className="form-text-input-block"
+                  />
+                </fieldset>
+              </Name>
+            </form>
+          </div>
+        </Form>
+      </Router>
+    </MemoryRouter>
+    <div />
+  </Suspense>
+</Provider>
+`;

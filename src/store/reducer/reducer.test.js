@@ -2,6 +2,13 @@ import reducer from "./reducer";
 import { initialState } from "./reducer";
 import { setLanguage, setStep, setFormValue, setInitial } from "../action";
 
+let tempPayload = {
+  field: "first-name",
+  value: {
+    value: "XXXX",
+    valid: true,
+  },
+};
 describe("Reducer.js", () => {
   it("Sets the language", () => {
     let tempState = initialState;
@@ -15,13 +22,7 @@ describe("Reducer.js", () => {
   });
   it("Sets the form value", () => {
     let tempState = initialState;
-    let tempPayload = {
-      "first-name": {
-        value: "XXXX",
-        valid: true,
-      },
-    };
-    tempState["first-name"] = tempPayload["first-name"];
+    tempState.form["first-name"] = tempPayload.value;
     expect(reducer(initialState, setFormValue(tempPayload))).toEqual(tempState);
   });
   it("Resets the form value", () => {

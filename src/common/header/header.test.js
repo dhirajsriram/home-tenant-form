@@ -1,71 +1,55 @@
-// import React from "react";
-// import { configure } from "enzyme";
-// import Adapter from "enzyme-adapter-react-16";
-// import { MemoryRouter } from "react-router";
-// import App from "../../App";
-// import {render,wait,cleanup, fireEvent} from '@testing-library/react';
-// import { Provider } from "react-redux";
-// import allReducers from "../../store/reducer";
-// import { createStore } from "redux";
+import React from "react";
+import Adapter from "enzyme-adapter-react-16";
+import { configure, mount } from "enzyme";
+import "../../i18n";
+import { MemoryRouter } from "react-router";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import allReducers from "../../store/reducer";
+import Header from "./Header";
+import { initialState } from "../../store/reducer/reducer";
+import { setFormValue } from "../../store/action";
 
-// afterEach(cleanup);
-// configure({ adapter: new Adapter() });
-// const store = createStore(allReducers);
-// function TestBed () {
-//   return (
-// <Provider store={store}>
-//     <MemoryRouter initialEntries={["/"]}>
-//       <App />
-//     </MemoryRouter></Provider>
-//   )
-// }
-// test("Header appears on all routes", async () => {
-//   jest.setTimeout(30000);
-//   const Title = 'Sample App';
-//   const {getByText}  = render(
-//     <TestBed/>
-//   );
-//   await wait(()=> expect(getByText(Title)).toBeDefined());
-// });
+let wrapper;
+configure({ adapter: new Adapter() });
 
-// test("Menu are part of the header", async () => {
-//   jest.setTimeout(30000);
-//   const Menu = 'menu';
-//   const {getByLabelText}  = render(
-//       <TestBed/>
-//     );
-//   await wait(()=> expect(getByLabelText(Menu)).toBeDefined());
-// });
+const store = createStore(allReducers);
 
-// test("Clicking on the hamburger opens the sidemenu", async () => {
-//   jest.setTimeout(30000);
-//   const Menu = 'menu';
-//   const {getByLabelText,getByText}  = render(
-//     <TestBed/>
-//   );
-//   await wait(()=> {fireEvent.click(getByLabelText(Menu))
-//   });
-//   const items = await getByText(/About/);
-//   expect(items).toBeDefined()
-// });
+beforeEach(() => {
+  wrapper = mount(
+    <Provider store={store}>
+      <React.Suspense fallback={<div></div>}>
+        <MemoryRouter initialEntries={["/"]} keyLength={0}>
+          <Header />
+        </MemoryRouter>
+      </React.Suspense>
+    </Provider>
+  );
+});
 
-// test("Clicking on the hamburger opens the sidemenu", async () => {
-//   jest.setTimeout(30000);
-//   const Menu = 'menu';
-//   const Home='HOME';
-//   const {getByLabelText,getByText}  = render(
-//     <Provider store={store}>
-//     <MemoryRouter initialEntries={["/asdasd"]}>
-//       <App />
-//     </MemoryRouter></Provider>
-//   );
-//   await wait(()=> {fireEvent.click(getByLabelText(Menu))});
-//   await wait(()=> {fireEvent.click(getByText(/Home/))});
-//   await wait(()=> expect(getByText(Home)).toBeDefined());
-// });
-
-
-
-
-
-
+describe("<Header>", () => {
+  it("Renders without exploding", async () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  it("Home button resets the form", async () => {
+    let tempState = initialState;
+    let tempPayload = {
+      field: "email",
+      value: {
+        value: "XXXX",
+        valid: true,
+      },
+    };
+    store.dispatch(setFormValue(tempPayload));
+    const button = wrapper.find("button").at(0);
+    button.simulate("click");
+    expect(store.getState().reducer).toEqual(tempState);
+  });
+  it("Sets the language based on selection", async () => {
+    const button = wrapper.find("button").at(1);
+    button.simulate("click");
+    const de = wrapper.find("li").at(1);
+    de.simulate('click');
+    expect(store.getState().reducer.language).toEqual('DE');
+  });
+});
