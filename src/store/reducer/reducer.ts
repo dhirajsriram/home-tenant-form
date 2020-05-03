@@ -11,7 +11,7 @@ interface Actions {
   };
 }
 
-interface form {
+export interface form {
   [index: string]: field
 }
 

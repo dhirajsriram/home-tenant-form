@@ -10,12 +10,11 @@ interface inputProps {
   placeholder: string;
 }
 
-const TextInput = (props: inputProps) => {
-
+const TextInput: React.FC<inputProps> = (props) => {
   const { id, pattern, type, placeholder } = props;
-  const [fieldValid, setFieldValid] = useState(true);
+  const [fieldValid, setFieldValid] = useState<boolean | null>(true);
   const dispatch = useDispatch();
-  const form = useSelector((state: any) => state.reducer.form);
+  const form: any = useSelector((state: any) => state.reducer.form);
   const { value, valid } = form[id];
 
   useEffect(() => {
@@ -23,15 +22,15 @@ const TextInput = (props: inputProps) => {
     setFieldValid(valid);
   }, [valid]);
 
-  const validate = (e: any) => {
+  const validate = (e: React.ChangeEvent<HTMLInputElement>) => {
     // Checks if the field is valid onChange.
-    let validity =
-      pattern.test(e.target.value) && e.target.value.trim() !== "";
+    let value = (e.target as HTMLInputElement).value
+    let validity = pattern.test(value) && value.trim() !== "";
     if (id === "phone") {
       validity =
-        pattern.test(e.target.value) &&
-        e.target.value.trim() !== "" &&
-        e.target.value.length >= 10;
+        pattern.test(value) &&
+        value.trim() !== "" &&
+        value.length >= 10;
     }
     setFieldValid(validity);
     // Sets the redux store with updated data onChange
@@ -40,13 +39,13 @@ const TextInput = (props: inputProps) => {
       payload: {
         field: id,
         value: {
-          value: e.target.value,
+          value: value,
           valid: validity,
         },
       },
     });
   };
-  
+
   return (
     <div>
       <input
@@ -62,11 +61,12 @@ const TextInput = (props: inputProps) => {
       <label htmlFor={id} className="form-label">
         {placeholder}
       </label>
+      {/* Invalid Text */}
       {!fieldValid && value !== null && (
         <div className="form-invalid">Enter a valid {id}</div>
       )}
     </div>
   );
-}
+};
 
 export default TextInput;

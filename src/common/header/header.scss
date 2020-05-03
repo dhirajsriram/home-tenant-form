@@ -5,7 +5,7 @@
   .menu-bar {
     box-shadow: none;
     .menu-toolbar {
-      padding: 16px;
+      padding: $sixteen;
       display: flex;
       justify-content: space-between;
       .menu-button{
@@ -19,14 +19,14 @@
 }
 
 .language-button {
-  padding: 0px 12px;
-  margin: 12px;
+  padding: 0px $twelve;
+  margin: $twelve;
   @include boxShadow();
 }
 .language-flag {
-  width: 25px;
-  margin-right: 10px;
+  width: $twofive;
+  margin-right: $ten;
 }
 .language {
-  font-size: "18px";
+  font-size: 18px;
 }

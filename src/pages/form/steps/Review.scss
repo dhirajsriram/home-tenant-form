@@ -1,8 +1,8 @@
 @import "./../../../scss/main.scss";
 
 .form-review-container {
-  padding: 12px;
-  border-radius: 10px;
+  padding: $twelve;
+  border-radius: $ten;
   margin-top: 35px;
   @include boxShadow();
   display: grid;
@@ -12,22 +12,22 @@
   }
 
   .form-review-field {
-    padding: 20px;
+    padding: $twenty;
     display: flex;
     align-items: center;
     .form-review-icon {
       svg {
         font-size: 30px;
-        margin-right: 25px;
+        margin-right: $twofive;
         color: $dark-gray;
       }
     }
     .form-review-label {
       font-family: "Roboto";
       font-weight: bold;
-      font-size: 16px;
+      font-size: $sixteen;
       text-transform: capitalize;
-      margin-bottom: 10px;
+      margin-bottom: $ten;
     }
     .form-review-value {
       overflow-wrap: anywhere;

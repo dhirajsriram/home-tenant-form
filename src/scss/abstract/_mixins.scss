@@ -10,11 +10,11 @@
 }
 
 @mixin boxShadow() {
-  box-shadow: 0 3px 10px rgba(177, 190, 201, 0.48);
+  box-shadow: 0 3px $ten rgba(177, 190, 201, 0.48);
 }
 
 @mixin inputContainer() {
-  border-radius: 10px;
+  border-radius: $ten;
   font-size: $twenty;
   border: 0px solid $light-gray;
   @include boxShadow;
