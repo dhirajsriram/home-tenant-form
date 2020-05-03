@@ -1,7 +1,6 @@
 import React from "react";
 import Adapter from "enzyme-adapter-react-16";
 import { configure, mount } from "enzyme";
-import "../../i18n";
 import { MemoryRouter } from "react-router";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -9,6 +8,7 @@ import allReducers from "../../store/reducer";
 import Header from "./Header";
 import { initialState } from "../../store/reducer/reducer";
 import { setFormValue } from "../../store/action";
+import "../../i18n";
 
 let wrapper;
 configure({ adapter: new Adapter() });
