@@ -1,5 +1,5 @@
 import React from "react";
-import TextInput from "../../../common/formsElement/TextInput";
+import TextInput from "../../../common/formelements/TextInput";
 import { useTranslation } from "react-i18next";
 import Navigation from "./navigation/Navigation";
 import './Fields.scss';
