@@ -6,6 +6,13 @@ $radio-padding: $fifteen $twofive $fifteen $fifteen;
   border: 0;
   margin-top: 40px;
   min-inline-size: inherit;
+  position: relative;
+  animation: slide 0.5s;
+  height: 100%;
+  @keyframes slide {
+    from {top: 1000px;}
+    to {top: 0px;}
+  }
   .form-legend {
     font-family: "Circular Bold";
     font-size: 28px;
