@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Loader from "./common/loader/loader";
+import Loader from "./common/loader/LoaderComp";
 import routes from "./routes";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import { grey } from "@material-ui/core/colors";
