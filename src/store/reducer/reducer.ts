@@ -26,7 +26,7 @@ interface field {
   valid: boolean;
 }
 
-const initialState: InitialState = {
+export const initialState: InitialState = {
   language: "EN",
   step: 0,
   form: {
