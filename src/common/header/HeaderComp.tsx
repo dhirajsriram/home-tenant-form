@@ -1,55 +1,62 @@
 import React, { useEffect } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
+import {
+  Button,
+  MenuItem,
+  Menu,
+  IconButton,
+  Toolbar,
+  AppBar,
+} from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { SETLANGUAGE, SETINITIAL } from "../../store/constants/constants";
-import { useSelector,useDispatch } from 'react-redux';
-import './header.scss';
+import { useSelector, useDispatch } from "react-redux";
+import "./Header.scss";
 
-export default function Header() {
-  const dispatch = useDispatch()
-  const [anchorEl, setAnchorEl] = React.useState(null);
+const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
   const { i18n } = useTranslation();
-  const language = useSelector((state:any) => state.reducer.language)
+  const language: string = useSelector((state: any) => state.reducer.language);
 
   useEffect(() => {
+    // Set the initial language for translation
     i18n.changeLanguage(language.toLowerCase());
-  },[i18n,language])
+  }, [i18n, language]);
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // Set the anchor element for dropdown
     setAnchorEl(event.currentTarget);
   };
 
-  const reset = (event:any) => {
-    dispatch({type: SETINITIAL})
-  }
+  const reset = (event: React.MouseEvent<HTMLButtonElement>) => {
+    // Resets the form
+    dispatch({ type: SETINITIAL });
+  };
 
   const handleClose = () => {
+    // Close the dropdown
     setAnchorEl(null);
   };
 
   const selectLanguage = (e: any, lang: string) => {
+    // Sets the language from the dropdown
     i18n.changeLanguage(lang.toLowerCase());
-    dispatch({ type: SETLANGUAGE, payload: {language : lang} });
+    dispatch({ type: SETLANGUAGE, payload: { language: lang } });
     setAnchorEl(null);
   };
 
   return (
     <div className="menu-container">
-      
       <AppBar position="static" color="inherit" className="menu-bar">
         <Toolbar className="menu-toolbar">
-          <IconButton className="menu-button" onClick={(e)=> reset(e)}>
+          <IconButton className="menu-button" onClick={(e) => reset(e)}>
             <img
               src={require("../../assets/images/logo.png")}
               className="menu-icon"
               alt="Home HT"
             />
           </IconButton>
+          {/* Language Dropdown */}
           <div className="menu-content">
             <Button
               aria-controls="language-menu"
@@ -93,4 +100,6 @@ export default function Header() {
       </AppBar>
     </div>
   );
-}
+};
+
+export default Header;

@@ -7,7 +7,7 @@ import { grey } from "@material-ui/core/colors";
 import "./App.scss";
 import { Trans } from "react-i18next";
 
-const Header = React.lazy(() => import("./common/header/header"));
+const Header = React.lazy(() => import("./common/header/HeaderComp"));
 const Stepper = React.lazy(() => import("./common/stepper/Stepper"));
 const theme = createMuiTheme({
   palette: {
@@ -27,7 +27,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Trans>
             <div className="main-container">
-              <Header />
+              <Header/>
               <div className="main-content">
                 <Stepper />
                 <Switch>
