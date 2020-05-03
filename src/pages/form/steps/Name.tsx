@@ -1,10 +1,17 @@
+//------------------- STEP 1 - Name -------------------//
 import React from "react";
-import TextInput from "../../../common/formelements/TextInput";
 import { useTranslation } from "react-i18next";
-import Navigation from "./navigation/Navigation";
 import './Fields.scss';
 
-function Name() {
+const Navigation: Function = React.lazy(() =>
+  import("./navigation/Navigation")
+);
+
+const TextInput: Function = React.lazy(() =>
+  import("../../../common/formelements/TextInput")
+);
+
+const Name:React.FC = () => {
   const { t } = useTranslation();
 
   return (

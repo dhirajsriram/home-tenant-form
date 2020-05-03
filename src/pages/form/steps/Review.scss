@@ -4,7 +4,7 @@
   padding: $twelve;
   border-radius: $ten;
   margin-top: 35px;
-  @include boxShadow();
+  @include boxShadow;
   display: grid;
   grid-template-columns: auto auto;
   @media screen and (max-width: 800px) {
@@ -17,7 +17,7 @@
     align-items: center;
     .form-review-icon {
       svg {
-        font-size: 30px;
+        font-size: $thirty;
         margin-right: $twofive;
         color: $dark-gray;
       }
@@ -34,6 +34,6 @@
     }
   }
   .form-submit {
-    margin-top: 30px;
+    margin-top: $thirty;
   }
 }

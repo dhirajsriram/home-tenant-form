@@ -1,0 +1,49 @@
+{"de": {
+    "translations": {
+      "Name": "Name",
+      "Email":"Email",
+      "Phone": "Phone",
+      "Salary": "Gehalt",
+      "Review": "Rezension",
+      "Enter your name": "Gib deinen Namen ein",
+      "First Name": "Vorname",
+      "First name": "Vorname",
+      "Last Name": "Nachname",
+      "Last name": "Nachname",
+      "Enter your Email Address": "Geben sie ihre E-Mail Adresse ein",
+      "Enter your phone": "Geben Sie Ihr Telefon ein",
+      "Enter your Salary": "Geben Sie Ihr Gehalt ein",
+      "Kindly review your input": "Bitte überprüfen Sie Ihre Eingabe",
+      "Thank you for your submission":"Vielen Dank für Ihre Einreichung",
+      "We will reach back to you shortly with more information":"Wir werden uns in Kürze mit weiteren Informationen bei Ihnen melden.",
+      "Over 4000": "Mehs als 4000",
+      "submit":"Registrieren",
+      "next": "weiter",
+      "back": "Bisherige"
+    }
+  },
+  "en": {
+    "translations": {
+      "Name": "Name",
+      "Email":"Email",
+      "Phone": "Phone",
+      "Salary": "Salary",
+      "Review": "Review", 
+      "Enter your name": "Enter your name",
+      "First Name": "First Name",
+      "First name": "First Name",
+      "Last Name": "Last Name",
+      "Last name": "Last Name",
+      "Enter your Email Address": "Enter your Email Address",
+      "Enter your phone": "Enter your Email Phone",
+      "Enter your Salary": "Enter your Email Salary",
+      "Kindly review your input":"Kindly review your input",
+      "Thank you for your submission":"Thank you for your submission",
+      "We will reach back to you shortly with more information":"We will reach back to you shortly with more information",
+      "Over 4000": "Over 4000",
+      "submit":"submit",
+      "next": "next",
+      "back": "back"
+    }
+  }
+}

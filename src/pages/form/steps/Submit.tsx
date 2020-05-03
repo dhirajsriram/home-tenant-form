@@ -1,10 +1,11 @@
+//------------------- STEP 6 - Submit -------------------//
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Fields.scss";
 
-function Submit() {
+const Submit: React.FC = () => {
   const { t } = useTranslation();
-
+  
   return (
     <fieldset className="form-fieldset">
       <div className="submit-container">
@@ -14,10 +15,13 @@ function Submit() {
         </div>
       </div>
       <div className="fireworks-container">
-        <img src={require("../../../assets/images/fireworks.gif")} alt="fireworks" />
-      </div>  
+        <img
+          src={require("../../../assets/images/fireworks.gif")}
+          alt="fireworks"
+        />
+      </div>
     </fieldset>
   );
-}
+};
 
 export default Submit;

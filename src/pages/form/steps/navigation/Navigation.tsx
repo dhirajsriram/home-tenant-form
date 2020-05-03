@@ -3,19 +3,31 @@ import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP } from "../../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
-import './Navigation.scss'
+import "./Navigation.scss";
 
-function Navigation(props: any) {
+interface navigation {
+  next: number;
+  previous: number;
+  field: string;
+}
+
+const Navigation: React.FC<navigation> = (props) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const form = useSelector((state: any) => state.reducer.form);
-  const next = (e: any) => {
+  const form: any = useSelector((state: any) => state.reducer.form);
+
+  const next = (e: React.MouseEvent): void => {
+    // Move forward 
     dispatch({ type: SETSTEP, payload: { step: props.next } });
   };
-  const back = (e: any) => {
+
+  const back = (e: React.MouseEvent): void => {
+    // Move back 
     dispatch({ type: SETSTEP, payload: { step: props.previous } });
   };
-  const valid = (field: string) => {
+
+  const valid = (field: string): boolean => {
+    // Check if the field are valiid
     if (field) {
       if (field === "name") {
         return !(form["first-name"].valid && form["last-name"].valid);
@@ -24,6 +36,7 @@ function Navigation(props: any) {
     }
     return false;
   };
+
   return (
     <div className="form-button-container">
       <Button
@@ -33,7 +46,7 @@ function Navigation(props: any) {
         onClick={(e) => next(e)}
         disabled={valid(props.field)}
       >
-        {props.next === 5 ? t("submit"): t("next")}
+        {props.next === 5 ? t("submit") : t("next")}
       </Button>
       {props.field !== "name" && (
         <Button
@@ -46,6 +59,6 @@ function Navigation(props: any) {
       )}
     </div>
   );
-}
+};
 
 export default Navigation;

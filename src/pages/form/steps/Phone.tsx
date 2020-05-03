@@ -1,10 +1,17 @@
+//------------------- STEP 3 - Phone -------------------//
 import React from "react";
-import TextInput from "../../../common/formelements/TextInput";
 import { useTranslation } from "react-i18next";
-import Navigation from "./navigation/Navigation";
 import './Fields.scss';
 
-function Phone() {
+const Navigation: Function = React.lazy(() =>
+  import("./navigation/Navigation")
+);
+
+const TextInput: Function = React.lazy(() =>
+  import("../../../common/formelements/TextInput")
+);
+
+const Phone:React.FC = () => {
   const {t} = useTranslation();
 
   return (

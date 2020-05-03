@@ -1,6 +1,7 @@
 @import "./../../../scss/main.scss";
 
 $radio-padding: $fifteen $twofive $fifteen $fifteen;
+
 .form-fieldset {
   border: 0;
   margin-top: 40px;
@@ -9,7 +10,7 @@ $radio-padding: $fifteen $twofive $fifteen $fifteen;
     font-family: "Circular Bold";
     font-size: 28px;
     line-height: 32px;
-    color: rgb(59, 59, 59);
+    color: $primary-color;
     text-align: left;
     margin-bottom: $twenty;
   }
@@ -113,7 +114,7 @@ $radio-padding: $fifteen $twofive $fifteen $fifteen;
       }
     }
     .form-submit {
-      margin-top: 30px;
+      margin-top: $thirty;
     }
   }
 }

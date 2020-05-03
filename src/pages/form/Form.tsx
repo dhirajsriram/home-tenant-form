@@ -12,6 +12,7 @@ const Submit: Function = React.lazy(() => import("./steps/Submit"));
 const Form: React.FC = () => {
   const activeStep: number = useSelector((state: any) => state.reducer.step);
   const renderStep = (): ReactElement => {
+    // Logic to switch between steps 
     switch (activeStep) {
       case 0:
         return <Name />;
