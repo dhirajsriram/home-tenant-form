@@ -20,7 +20,7 @@ const Email: React.FC = () => {
         <TextInput
           type="text"
           id="email"
-          placeholder="Email"
+          placeholder={t("Email")}
           pattern={/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/}
         />
         <Navigation previous={0} next={2} field="email" />

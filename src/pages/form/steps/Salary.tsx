@@ -17,11 +17,11 @@ const Salary: React.FC = () => {
   const [value, setValue] = React.useState<string>("");
   // List of salaries for radio button
   const salaries:Object[] = [
-    { value: "0-1000", id: "zero-to-thousand" },
-    { value: "1000-2000", id: "thousand-to-two-thousand" },
-    { value: "2000-3000", id: "two-thousand-to-three-thousand" },
-    { value: "3000-4000", id: "three-thousand-to-four-thousand" },
-    { value: "Over 4000", id: "Over-four-thousand" },
+    { value: "0€-1000€", id: "zero-to-thousand" },
+    { value: "1000€-2000€", id: "thousand-to-two-thousand" },
+    { value: "2000€-3000€", id: "two-thousand-to-three-thousand" },
+    { value: "3000€-4000€", id: "three-thousand-to-four-thousand" },
+    { value: "Over 4000€", id: "Over-four-thousand" },
   ];
 
   useEffect(() => {

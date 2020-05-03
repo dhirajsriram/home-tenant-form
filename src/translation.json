@@ -1,16 +1,16 @@
 {"de": {
     "translations": {
       "Name": "Name",
-      "Email":"Email",
-      "Phone": "Phone",
+      "Email":"E-mail Adresse",
+      "Phone": "Telefon / Handynummer",
       "Salary": "Gehalt",
       "Review": "Rezension",
-      "Enter your name": "Gib Sie Ihr Namen ein",
+      "Enter your name": "Geben Sie Ihren Namen ein",
       "First Name": "Vorname",
       "First name": "Vorname",
       "Last Name": "Nachname",
       "Last name": "Nachname",
-      "Enter your Email Address": "Geben sie ihre E-Mail Adresse ein",
+      "Enter your Email Address": "Geben Sie Ihre E-Mail Adresse ein",
       "Enter your phone": "Geben Sie Ihr Telefon ein",
       "Enter your Salary": "Geben Sie Ihr Gehalt ein",
       "Kindly review your input": "Bitte überprüfen Sie Ihre Eingabe",
@@ -18,10 +18,10 @@
       "Oops, We were unable to find that":"Ups, das konnten wir nicht finden",
       "Kindly use the home icon to reset the form":"Verwenden Sie bitte das Home-Symbol, um das Formular zurückzusetzen",
       "We will reach back to you shortly with more information":"Wir werden uns in Kürze mit weiteren Informationen bei Ihnen melden.",
-      "Over 4000": "Mehs als 4000",
+      "Over 4000€": "Mehrs als 4000€",
       "submit":"Registrieren",
       "next": "weiter",
-      "back": "Bisherige"
+      "back": "zurück"
     }
   },
   "en": {
@@ -31,7 +31,7 @@
       "Phone": "Phone",
       "Salary": "Salary",
       "Review": "Review", 
-      "Enter your name": "Enter your Name",
+      "Enter your name": "Enter your name",
       "First Name": "First Name",
       "First name": "First Name",
       "Last Name": "Last Name",
@@ -44,7 +44,7 @@
       "Oops, We were unable to find that":"Oops, We were unable to find that",
       "Kindly use the home icon to reset the form":"Kindly use the home icon to reset the form",
       "We will reach back to you shortly with more information":"We will reach back to you shortly with more information",
-      "Over 4000": "Over 4000",
+      "Over 4000€": "Over 4000€",
       "submit":"submit",
       "next": "next",
       "back": "back"
