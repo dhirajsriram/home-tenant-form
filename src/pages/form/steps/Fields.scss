@@ -1,103 +1,119 @@
-@import './../../../scss/main.scss';
+@import "./../../../scss/main.scss";
 
 $radio-padding: 15px 25px 15px 15px;
 .form-fieldset {
-    border: 0;
-    margin-top: 40px;
-    min-inline-size: inherit;
-    .form-legend {
-      font-family: "Circular Bold";
-      font-size: 28px;
-      line-height: 32px;
-      color: rgb(59, 59, 59);
-      text-align: left;
-      margin-bottom: $twenty;
-    }
-
-    .form-text-input-block {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 20px;
-      
+  border: 0;
+  margin-top: 40px;
+  min-inline-size: inherit;
+  .form-legend {
+    font-family: "Circular Bold";
+    font-size: 28px;
+    line-height: 32px;
+    color: rgb(59, 59, 59);
+    text-align: left;
+    margin-bottom: $twenty;
+  }
+  .fireworks-container {
+    img {
+      width:20%;
+      display: block;
+      padding: 50px;
       @media screen and (max-width: 800px) {
         grid-template-columns: auto;
-      }
-    }
-
-    .form-label {
-      visibility: hidden;
-    }
-
-    .form-input {
-      @include inputContainer;
-      width: stretch;
-      padding: 15px;
-      &.invalid {
-        border: 2px solid $red;
-      }
-    }
-
-    .form-invalid {
-      color: $dark-gray;
-      padding-top: 10px;
-      color: $red;
-    }
-
-    .radio-block {
-      display: flex;
-      .radio-group {
-        @media screen and (max-width: 800px) {
-          flex-direction: column;
-          width: 100%;
-        }
-        .radio-container {
-          @include inputContainer;
-          padding: $radio-padding;
-          &.checked {
-            border: 2px solid $primary-color;
-          }
-          @media screen and (max-width: 800px) {
-            margin: 10px 0px;
-          }
-        }
-      }
-    }
-    
-    .form-review-container {
-      padding: 12px;
-      border-radius: 10px;
-      margin-top: 35px;
-      @include boxShadow();
-      display: grid;
-      grid-template-columns: auto auto;
-      @media screen and (max-width: 800px) {
-        grid-template-columns: auto;
-      }
-
-      .form-review-field {
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        .form-review-icon {
-          svg {
-            font-size: 25px;
-            margin-right: 15px;
-            color: $dark-gray;
-          }
-        }
-        .form-review-label {
-          font-family: "Roboto";
-          font-weight: bold;
-          font-size: 16px;
-          text-transform: capitalize;
-          margin-bottom: 10px;
-        }
-        .form-review-value {
-          overflow-wrap: anywhere;
-        }
-      }
-      .form-submit {
-        margin-top: 30px;
+        width: 50%;
+        margin: auto;
       }
     }
   }
+  .form-sub-legend {
+    color: $dark-gray;
+  }
+
+  .form-text-input-block {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: auto;
+    }
+  }
+
+  .form-label {
+    visibility: hidden;
+  }
+
+  .form-input {
+    @include inputContainer;
+    width: stretch;
+    padding: 15px;
+    &.invalid {
+      border: 2px solid $red;
+    }
+  }
+
+  .form-invalid {
+    color: $dark-gray;
+    padding-top: 10px;
+    color: $red;
+  }
+
+  .radio-block {
+    display: flex;
+    .radio-group {
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        width: 100%;
+      }
+      .radio-container {
+        @include inputContainer;
+        margin-left: 0;
+        padding: $radio-padding;
+        &.checked {
+          border: 2px solid $primary-color;
+        }
+        @media screen and (max-width: 800px) {
+          margin: 10px 0px;
+        }
+      }
+    }
+  }
+
+  .form-review-container {
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 35px;
+    @include boxShadow();
+    display: grid;
+    grid-template-columns: auto auto;
+    @media screen and (max-width: 800px) {
+      grid-template-columns: auto;
+    }
+
+    .form-review-field {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      .form-review-icon {
+        svg {
+          font-size: 25px;
+          margin-right: 15px;
+          color: $dark-gray;
+        }
+      }
+      .form-review-label {
+        font-family: "Roboto";
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+      .form-review-value {
+        overflow-wrap: anywhere;
+      }
+    }
+    .form-submit {
+      margin-top: 30px;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Email from "./steps/Email";
 import Phone from "./steps/Phone";
 import Salary from "./steps/Salary";
 import Review from "./steps/Review";
+import Submit from "./steps/Submit";
 
 const Form: React.FC = () => {
   const activeStep = useSelector((state: any) => state.reducer.step);
@@ -21,6 +22,8 @@ const Form: React.FC = () => {
         return <Salary />;
       case 4:
         return <Review />;
+      case 5:
+        return <Submit />;
       default:
         break;
     }

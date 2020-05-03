@@ -9,7 +9,7 @@ import { SETSTEP } from "../../store/constants/constants";
 import { useTranslation } from "react-i18next";
 
 function getSteps() {
-  return ["Name", "Email", "Phone", "Salary","Review"];
+  return ["Name", "Email", "Phone", "Salary","Review", "Done"];
 }
 
 export default function VerticalLinearStepper() {
