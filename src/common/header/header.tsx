@@ -6,7 +6,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import { useTranslation } from "react-i18next";
-import { SETLANGUAGE } from "../../store/constants/constants";
+import { SETLANGUAGE, SETINITIAL } from "../../store/constants/constants";
 import { useSelector,useDispatch } from 'react-redux';
 import './header.scss';
 
@@ -24,6 +24,10 @@ export default function Header() {
     setAnchorEl(event.currentTarget);
   };
 
+  const reset = (event:any) => {
+    dispatch({type: SETINITIAL})
+  }
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -39,7 +43,7 @@ export default function Header() {
       
       <AppBar position="static" color="inherit" className="menu-bar">
         <Toolbar className="menu-toolbar">
-          <IconButton className="menu-button">
+          <IconButton className="menu-button" onClick={(e)=> reset(e)}>
             <img
               src={require("../../assets/logo.png")}
               className="menu-icon"

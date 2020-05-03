@@ -1,4 +1,4 @@
-import { SETLANGUAGE, SETSTEP, SETFORMVALUE } from "../constants/constants";
+import { SETLANGUAGE, SETSTEP, SETFORMVALUE, SETINITIAL } from "../constants/constants";
 
 interface Actions {
   type: String;
@@ -64,6 +64,8 @@ const reducer = (state = initialState, action: Actions) => {
       Object.assign(form,state.form);
       form[action.payload.field] = action.payload.value;
       return { ...state, form : form}
+    case SETINITIAL:
+        return initialState;
     default:
       return state;
   }
