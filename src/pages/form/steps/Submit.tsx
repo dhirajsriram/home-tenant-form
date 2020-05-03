@@ -14,7 +14,7 @@ function Submit() {
         </div>
       </div>
       <div className="fireworks-container">
-        <img src={require("../../../assets/fireworks.gif")} alt="fireworks" />
+        <img src={require("../../../assets/images/fireworks.gif")} alt="fireworks" />
       </div>  
     </fieldset>
   );

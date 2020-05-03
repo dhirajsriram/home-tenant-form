@@ -45,7 +45,7 @@ export default function Header() {
         <Toolbar className="menu-toolbar">
           <IconButton className="menu-button" onClick={(e)=> reset(e)}>
             <img
-              src={require("../../assets/logo.png")}
+              src={require("../../assets/images/logo.png")}
               className="menu-icon"
               alt="Home HT"
             />
@@ -58,7 +58,7 @@ export default function Header() {
               onClick={handleClick}
             >
               <img
-                src={require(`../../assets/${language.toLowerCase()}-flag.svg`)}
+                src={require(`../../assets/images/${language.toLowerCase()}-flag.svg`)}
                 className="language-flag"
                 alt={language}
               />
@@ -73,7 +73,7 @@ export default function Header() {
             >
               <MenuItem onClick={(e) => selectLanguage(e, "EN")}>
                 <img
-                  src={require("../../assets/en-flag.svg")}
+                  src={require("../../assets/images/en-flag.svg")}
                   className="language-flag"
                   alt="EN"
                 ></img>
@@ -81,7 +81,7 @@ export default function Header() {
               </MenuItem>
               <MenuItem onClick={(e) => selectLanguage(e, "DE")}>
                 <img
-                  src={require("../../assets/de-flag.svg")}
+                  src={require("../../assets/images/de-flag.svg")}
                   className="language-flag"
                   alt="DE"
                 ></img>
