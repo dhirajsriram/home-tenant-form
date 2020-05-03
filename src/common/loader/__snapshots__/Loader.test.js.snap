@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Phone> Renders without exploding 1`] = `
+exports[`<Loader> Renders without exploding 1`] = `
 <Provider
   store={
     Object {
@@ -55,20 +55,13 @@ exports[`<Phone> Renders without exploding 1`] = `
           }
         }
       >
-        <Phone>
-          <fieldset
-            className="form-fieldset"
-          >
-            <legend
-              className="form-legend"
-            >
-              Enter your Phone
-            </legend>
-          </fieldset>
-        </Phone>
+        <Loader>
+          <div
+            className="loader"
+          />
+        </Loader>
       </Router>
     </MemoryRouter>
-    <div />
   </Suspense>
 </Provider>
 `;
