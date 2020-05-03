@@ -10,9 +10,10 @@ import {
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
+import { withRouter } from 'react-router-dom';
 import { setInitial, setLanguage } from "../../store/action";
 
-const Header: React.FC = () => {
+const Header = withRouter(({ history }) => {
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState<Element | null>(null);
   const { i18n } = useTranslation();
@@ -31,6 +32,7 @@ const Header: React.FC = () => {
   const reset = (event: React.MouseEvent<HTMLButtonElement>) => {
     // Resets the form
     dispatch(setInitial());
+    history.push("/")
   };
 
   const handleClose = () => {
@@ -100,6 +102,6 @@ const Header: React.FC = () => {
       </AppBar>
     </div>
   );
-};
+})
 
 export default Header;
