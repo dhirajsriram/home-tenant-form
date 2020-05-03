@@ -11,6 +11,7 @@ import { useTranslation } from "react-i18next";
 import "./Stepper.scss";
 
 const getSteps = (): string[] => {
+  // Contains all the step titles
   return ["Name", "Email", "Phone", "Salary", "Review", "Done"];
 };
 
@@ -21,6 +22,7 @@ const Stepper: React.FC = () => {
   const dispatch = useDispatch();
 
   const setStep = (step: number): void => {
+    // Set step when clicked on a step
     dispatch({ type: SETSTEP, payload: { step } });
   };
 

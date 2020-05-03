@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-interface Props { }
+const FourZeroFour: React.FC = () => {
+  return <div>404!</div>;
+};
 
-function FourZeroFour(props: Props) {
-    return (
-        <div>404!</div>
-    )
-}
-
-export default FourZeroFour
+export default FourZeroFour;

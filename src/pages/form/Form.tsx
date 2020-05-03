@@ -1,16 +1,17 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Name from "./steps/Name";
 import "./Form.scss";
 import { useSelector } from "react-redux";
-import Email from "./steps/Email";
-import Phone from "./steps/Phone";
-import Salary from "./steps/Salary";
-import Review from "./steps/Review";
-import Submit from "./steps/Submit";
+
+const Email: Function = React.lazy(() => import("./steps/Email"));
+const Phone: Function = React.lazy(() => import("./steps/Phone"));
+const Salary: Function = React.lazy(() => import("./steps/Salary"));
+const Review: Function = React.lazy(() => import("./steps/Review"));
+const Submit: Function = React.lazy(() => import("./steps/Submit"));
 
 const Form: React.FC = () => {
-  const activeStep = useSelector((state: any) => state.reducer.step);
-  const RenderStep = () => {
+  const activeStep: number = useSelector((state: any) => state.reducer.step);
+  const renderStep = (): ReactElement => {
     switch (activeStep) {
       case 0:
         return <Name />;
@@ -27,10 +28,11 @@ const Form: React.FC = () => {
       default:
         break;
     }
+    return <Name />;
   };
   return (
     <div className="form-container">
-      <form>{RenderStep()}</form>
+      <form>{renderStep()}</form>
     </div>
   );
 };
