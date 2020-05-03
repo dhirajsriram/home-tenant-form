@@ -41,7 +41,7 @@ function TextInput(props: any) {
         }`}
         onChange={(e) => validate(e)}
         {...props}
-        value={form[props.id].value}
+        value={form[props.id].value ? form[props.id].value  : "" }
       />
       <label htmlFor={props.id} className="form-label">
         {props.value}

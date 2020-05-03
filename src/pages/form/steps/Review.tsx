@@ -1,18 +1,15 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Button } from "@material-ui/core";
+import { useSelector } from "react-redux";
 import FaceIcon from "@material-ui/icons/Face";
 import EmailIcon from "@material-ui/icons/Email";
 import MoneyIcon from "@material-ui/icons/Money";
 import CallIcon from "@material-ui/icons/Call";
-import { SETSTEP } from "../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
+import Navigation from "./navigation/Navigation";
 
 function Review() {
   const form = useSelector((state: any) => state.reducer.form);
-  const formSubmit = (e: any) => {};
   const {t} = useTranslation();
-  const dispatch = useDispatch();
   const getIcon = (value: string) => {
     switch (value) {
       case "first-name":
@@ -27,9 +24,6 @@ function Review() {
         return <MoneyIcon />;
     }
   };
-  const back = (e:any) => {
-    dispatch({type : SETSTEP, payload: {step: 3}})
-  }
   return (
     <fieldset className="form-fieldset">
       <div className="form-legend">{t('Kindly review your input')}</div>
@@ -44,18 +38,7 @@ function Review() {
           </div>
         ))}
       </div>
-      <div className="form-button-container">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={(e) => formSubmit(e)}
-        >
-          {t('next')}
-        </Button>
-        <Button variant="contained" color="primary" onClick={(e) => back(e)}>
-          {t('back')}
-        </Button>
-      </div>
+        <Navigation next={5} previous={3} />
     </fieldset>
   );
 }

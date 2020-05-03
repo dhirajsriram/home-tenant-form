@@ -1,19 +1,15 @@
 import React, { useEffect } from "react";
-import { Button, RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
+import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { SETSTEP, SETFORMVALUE } from "../../../store/constants/constants";
+import { SETFORMVALUE } from "../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
+import Navigation from "./navigation/Navigation";
 
 function Salary() {
   const dispatch = useDispatch();
   const form = useSelector((state: any) => state.reducer.form);
   const {t} = useTranslation()
-  const salarySubmit = (e: any) => {
-    dispatch({ type: SETSTEP, payload: { step: 4 } });
-  };
-  const back = (e:any) => {
-    dispatch({type : SETSTEP, payload: {step: 2}})
-  }
+
   const [value, setValue] = React.useState("");
 
   useEffect(()=>{
@@ -69,23 +65,8 @@ function Salary() {
           ))}
         </RadioGroup>
       </div>
-      <div className="form-button-container">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={(e) => salarySubmit(e)}
-          disabled={!(form['salary'].valid)}
-        >
-          {t('next')}
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={(e) => back(e)}
-        >
-          {t('back')}
-        </Button>
-      </div>
+
+      <Navigation next={4} previous={2} field="salary"/>
     </fieldset>
   );
 }
