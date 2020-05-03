@@ -17,7 +17,8 @@ $radio-padding: 15px 25px 15px 15px;
 
   .form-fieldset {
     border: 0;
-    padding-top: 40px;
+    margin-top: 40px;
+    min-inline-size: inherit;
     .form-legend {
       font-family: "Circular Bold";
       font-size: 28px;
@@ -117,6 +118,7 @@ $radio-padding: 15px 25px 15px 15px;
         }
         .form-review-value {
           text-transform: capitalize;
+          overflow-wrap: anywhere;
         }
       }
       .form-submit {
