@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { Button, RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP, SETFORMVALUE } from "../../../store/constants/constants";
+import { useTranslation } from "react-i18next";
 
 function Salary() {
   const dispatch = useDispatch();
   const form = useSelector((state: any) => state.reducer.form);
+  const {t} = useTranslation()
   const salarySubmit = (e: any) => {
     dispatch({ type: SETSTEP, payload: { step: 4 } });
   };
@@ -44,7 +46,7 @@ function Salary() {
   ];
   return (
     <fieldset className="form-fieldset">
-      <legend className="form-legend">Enter your Salary</legend>
+      <legend className="form-legend">{t('Enter your Salary')}</legend>
       <div className="radio-block">
         <RadioGroup
           aria-label="gender"
@@ -58,8 +60,8 @@ function Salary() {
             <FormControlLabel
               name="salary"
               className={`radio-container${value === salary.value ? ' checked':''}`}
-              value={salary.value}
-              label={salary.value}
+              value={t(salary.value)}
+              label={t(salary.value)}
               id={salary.id}
               key={salary.id}
               control={<Radio />}
@@ -74,14 +76,14 @@ function Salary() {
           onClick={(e) => salarySubmit(e)}
           disabled={!(form['salary'].valid)}
         >
-          Next
+          {t('next')}
         </Button>
         <Button
           variant="contained"
           color="primary"
           onClick={(e) => back(e)}
         >
-          Back
+          {t('back')}
         </Button>
       </div>
     </fieldset>

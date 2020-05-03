@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import allReducers from './store/reducer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import "./i18n";
 
 declare global {
 	interface Window {

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-
+import { useTranslation } from "react-i18next";
 import { SETLANGUAGE } from "../../store/constants/constants";
 import { useSelector,useDispatch } from 'react-redux';
 import './header.scss';
@@ -13,7 +13,12 @@ import './header.scss';
 export default function Header() {
   const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { i18n } = useTranslation();
   const language = useSelector((state:any) => state.reducer.language)
+
+  useEffect(() => {
+    i18n.changeLanguage(language.toLowerCase());
+  },[i18n,language])
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -24,6 +29,7 @@ export default function Header() {
   };
 
   const selectLanguage = (e: any, lang: string) => {
+    i18n.changeLanguage(lang.toLowerCase());
     dispatch({ type: SETLANGUAGE, payload: {language : lang} });
     setAnchorEl(null);
   };

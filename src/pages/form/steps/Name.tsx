@@ -3,27 +3,29 @@ import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP } from "../../../store/constants/constants";
 import TextInput from "../../../common/formsElement/TextInput";
+import { useTranslation } from "react-i18next";
 
 function Name() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const form = useSelector((state: any) => state.reducer.form);
   const nameSubmit = (e: any) => {
     dispatch({ type: SETSTEP, payload: { step: 1 } });
   };
   return (
     <fieldset className="form-fieldset">
-      <legend className="form-legend">Enter your name</legend>
+      <legend className="form-legend">{t('Enter your name')}</legend>
       <div className="form-text-input-block">
         <TextInput
           id="first-name"
           type="text"
-          placeholder="First Name"
+          placeholder={t('First Name')}
           pattern={/^[a-zA-Z]+$/}
         ></TextInput>
         <TextInput
           id="last-name"
           type="text"
-          placeholder="Last Name"
+          placeholder={t('Last Name')}
           pattern={/^[a-zA-Z]+$/}
         ></TextInput>
       </div>
@@ -34,7 +36,7 @@ function Name() {
           onClick={(e) => nameSubmit(e)}
           disabled={!(form['first-name'].valid && form['last-name'].valid)}
         >
-          Next
+          {t('next')}
         </Button>
       </div>
     </fieldset>

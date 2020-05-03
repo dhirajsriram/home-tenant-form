@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Stepper.scss";
 import { Button } from "@material-ui/core";
 import { SETSTEP } from "../../store/constants/constants";
+import { useTranslation } from "react-i18next";
 
 function getSteps() {
   return ["Name", "Email", "Phone", "Salary","Review"];
@@ -13,6 +14,7 @@ function getSteps() {
 
 export default function VerticalLinearStepper() {
   const steps = getSteps();
+  const { t } = useTranslation();
   const activeStep = useSelector((state: any) => state.reducer.step);
   const dispatch = useDispatch();
 
@@ -34,7 +36,7 @@ export default function VerticalLinearStepper() {
                 onClick={(e) => setStep(index)}
                 disabled={activeStep < index}
               >
-                {label}
+                {t(label)}
               </Button>
             </StepLabel>{" "}
           </Step>

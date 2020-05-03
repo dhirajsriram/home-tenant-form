@@ -6,10 +6,12 @@ import EmailIcon from "@material-ui/icons/Email";
 import MoneyIcon from "@material-ui/icons/Money";
 import CallIcon from "@material-ui/icons/Call";
 import { SETSTEP } from "../../../store/constants/constants";
+import { useTranslation } from "react-i18next";
 
 function Review() {
   const form = useSelector((state: any) => state.reducer.form);
   const formSubmit = (e: any) => {};
+  const {t} = useTranslation();
   const dispatch = useDispatch();
   const getIcon = (value: string) => {
     switch (value) {
@@ -30,13 +32,13 @@ function Review() {
   }
   return (
     <fieldset className="form-fieldset">
-      <div className="form-legend">Kindly review your input</div>
+      <div className="form-legend">{t('Kindly review your input')}</div>
       <div className="form-review-container">
         {Object.keys(form).map((input, value) => (
           <div className="form-review-field" key={value}>
             <div className="form-review-icon">{getIcon(input)}</div>
             <div className="form-review-field-content">
-              <div className="form-review-label">{input.replace("-", " ")}</div>
+              <div className="form-review-label">{t((input.replace("-", " ").charAt(0).toUpperCase() + input.replace("-", " ").slice(1)))}</div>
               <div className="form-review-value">{form[input].value}</div>
             </div>
           </div>
@@ -48,10 +50,10 @@ function Review() {
           color="primary"
           onClick={(e) => formSubmit(e)}
         >
-          Submit
+          {t('next')}
         </Button>
         <Button variant="contained" color="primary" onClick={(e) => back(e)}>
-          Back
+          {t('back')}
         </Button>
       </div>
     </fieldset>
