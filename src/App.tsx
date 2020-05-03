@@ -7,7 +7,7 @@ import { grey } from "@material-ui/core/colors";
 import "./App.scss";
 import { Trans } from "react-i18next";
 
-const Header = React.lazy(() => import("./common/header/HeaderComp"));
+const Header = React.lazy(() => import("./common/header/Header"));
 const Stepper = React.lazy(() => import("./common/stepper/Stepper"));
 const theme = createMuiTheme({
   palette: {
