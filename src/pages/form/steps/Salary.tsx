@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SETFORMVALUE } from "../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
 import Navigation from "./navigation/Navigation";
+import './Fields.scss';
 
 function Salary() {
   const dispatch = useDispatch();

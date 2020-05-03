@@ -1,0 +1,39 @@
+@import './../../../scss/main.scss';
+
+.form-review-container {
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 35px;
+    @include boxShadow();
+    display: grid;
+    grid-template-columns: auto auto;
+    @media screen and (max-width: 800px) {
+      grid-template-columns: auto;
+    }
+
+    .form-review-field {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      .form-review-icon {
+        svg {
+          font-size: 25px;
+          margin-right: 15px;
+          color: $dark-gray;
+        }
+      }
+      .form-review-label {
+        font-family: "Roboto";
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+      .form-review-value {
+        overflow-wrap: anywhere;
+      }
+    }
+    .form-submit {
+      margin-top: 30px;
+    }
+  }

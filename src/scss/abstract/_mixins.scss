@@ -16,7 +16,6 @@
 @mixin inputContainer() {
   border-radius: 10px;
   font-size: $twenty;
-  margin-right: 25px;
   border: 0px solid $light-gray;
   @include boxShadow;
   &:focus {

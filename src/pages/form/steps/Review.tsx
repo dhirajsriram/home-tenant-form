@@ -6,6 +6,7 @@ import MoneyIcon from "@material-ui/icons/Money";
 import CallIcon from "@material-ui/icons/Call";
 import { useTranslation } from "react-i18next";
 import Navigation from "./navigation/Navigation";
+import './Review.scss';
 
 function Review() {
   const form = useSelector((state: any) => state.reducer.form);

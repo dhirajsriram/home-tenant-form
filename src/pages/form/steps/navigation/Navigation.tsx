@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { SETSTEP } from "../../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
+import './Navigation.scss'
 
 function Navigation(props: any) {
   const dispatch = useDispatch();
@@ -37,7 +38,6 @@ function Navigation(props: any) {
       {props.field !== "name" && (
         <Button
           className="form-button-previous"
-          variant="contained"
           color="primary"
           onClick={(e) => back(e)}
         >
