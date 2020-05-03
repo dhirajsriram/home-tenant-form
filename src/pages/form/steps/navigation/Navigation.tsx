@@ -33,7 +33,7 @@ function Navigation(props: any) {
         onClick={(e) => next(e)}
         disabled={valid(props.field)}
       >
-        {t("next")}
+        {props.next === 5 ? t("submit"): t("next")}
       </Button>
       {props.field !== "name" && (
         <Button
