@@ -2,9 +2,9 @@
 import React, { useEffect } from "react";
 import { RadioGroup, FormControlLabel, Radio } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { SETFORMVALUE } from "../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
 import "./Fields.scss";
+import { setFormValue } from "../../../store/action";
 
 const Navigation: Function = React.lazy(() =>
   import("./navigation/Navigation")
@@ -31,17 +31,15 @@ const Salary: React.FC = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Dispatch event to Redux to update the salary
     let value = (event.target as HTMLInputElement).value;
-    setValue(value);
-    dispatch({
-      type: SETFORMVALUE,
-      payload: {
-        field: "salary",
-        value: {
-          value: value,
-          valid: true,
-        },
+    let payload = {
+      field: "salary",
+      value: {
+        value: value,
+        valid: true,
       },
-    });
+    };
+    setValue(value);
+    dispatch(setFormValue(payload));
   };
   return (
     <fieldset className="form-fieldset">

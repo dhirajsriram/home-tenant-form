@@ -8,9 +8,9 @@ import {
   AppBar,
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
-import { SETLANGUAGE, SETINITIAL } from "../../store/constants/constants";
 import { useSelector, useDispatch } from "react-redux";
 import "./Header.scss";
+import { setInitial, setLanguage } from "../../store/action";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
   const reset = (event: React.MouseEvent<HTMLButtonElement>) => {
     // Resets the form
-    dispatch({ type: SETINITIAL });
+    dispatch(setInitial());
   };
 
   const handleClose = () => {
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
   const selectLanguage = (e: any, lang: string) => {
     // Sets the language from the dropdown
     i18n.changeLanguage(lang.toLowerCase());
-    dispatch({ type: SETLANGUAGE, payload: { language: lang } });
+    dispatch(setLanguage(lang));
     setAnchorEl(null);
   };
 

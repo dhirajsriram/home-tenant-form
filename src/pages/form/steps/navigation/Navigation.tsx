@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { SETSTEP } from "../../../../store/constants/constants";
 import { useTranslation } from "react-i18next";
 import "./Navigation.scss";
+import { setStep } from "../../../../store/action";
 
 interface navigation {
   next: number;
@@ -18,12 +18,12 @@ const Navigation: React.FC<navigation> = (props) => {
 
   const next = (e: React.MouseEvent): void => {
     // Move forward 
-    dispatch({ type: SETSTEP, payload: { step: props.next } });
+    dispatch(setStep(props.next));
   };
 
   const back = (e: React.MouseEvent): void => {
     // Move back 
-    dispatch({ type: SETSTEP, payload: { step: props.previous } });
+    dispatch(setStep(props.previous));
   };
 
   const valid = (field: string): boolean => {

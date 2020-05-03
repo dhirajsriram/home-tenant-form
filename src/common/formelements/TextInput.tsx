@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SETFORMVALUE } from "../../store/constants/constants";
+import { setFormValue } from "../../store/action";
 
 // Interface for props(textInput)
 interface inputProps {
@@ -32,18 +32,18 @@ const TextInput: React.FC<inputProps> = (props) => {
         value.trim() !== "" &&
         value.length >= 10;
     }
-    setFieldValid(validity);
-    // Sets the redux store with updated data onChange
-    dispatch({
-      type: SETFORMVALUE,
-      payload: {
-        field: id,
-        value: {
-          value: value,
-          valid: validity,
-        },
+    let payload:any = {
+      field: id,
+      value: {
+        value: value,
+        valid: validity,
       },
-    });
+    };
+
+    setFieldValid(validity);
+    
+    // Sets the redux store with updated data onChange
+    dispatch(setFormValue(payload));
   };
 
   return (
