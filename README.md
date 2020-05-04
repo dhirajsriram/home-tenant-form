@@ -1,11 +1,11 @@
 
 # React-Sample 
 
-**(Include Project link if required //HERE// )**
+**(https://home-tenant.netlify.app/)**
 
 ## Abstract
 
-<-- Placeholder for project abstract //HERE// -->
+The goal of the application is to recieve the necessary information from a tenant to list the houses which match the criteria
 
 ## Installation
 

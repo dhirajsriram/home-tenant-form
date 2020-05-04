@@ -1,6 +1,7 @@
 .main-container{
     .main-content{
         display: flex;
-        align-items: baseline;
+        align-items: center;
+        min-height: calc(100vh - 160px);
     }
 }
