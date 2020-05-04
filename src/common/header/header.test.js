@@ -28,9 +28,9 @@ beforeEach(() => {
 });
 
 describe("<Header>", () => {
-  it("Renders without exploding", async () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+  // it("Renders without exploding", async () => {
+  //   expect(wrapper).toMatchSnapshot();
+  // });
   it("Home button resets the form", async () => {
     let tempState = initialState;
     let tempPayload = {
