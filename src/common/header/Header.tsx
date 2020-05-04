@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
-import "./Header.scss";
+import "./HeaderStyle.scss";
 import { withRouter } from 'react-router-dom';
 import { setInitial, setLanguage } from "../../store/action";
 
