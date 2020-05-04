@@ -50,6 +50,10 @@ A high-level architecture of the application can be found below
 
 <p align="center"><img src="/Architecture.png"></p>
 
+### Automated Tests
+
+The unit tests are automated in the CI pipeline before every CI deploy cycle. The list of all test suites are ran against the codebase to check for any regression before the build is published.
+
 ### Code Splitting
 
 Code Splitting is a must-have for any front-end application due to the performance benefits it offers. Sending the application in chunks improves the load times of the application by a great margin. Code splitting has been thoroughly followed in the entire application
