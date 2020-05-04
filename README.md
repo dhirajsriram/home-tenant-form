@@ -5,7 +5,7 @@
 
 ## Abstract
 
-The goal of the application is to receive the necessary information from a tenant to list the houses which match the criteria. The application has a main form which is split into 4 segments
+The goal of the application is to receive the necessary information from a tenant to list the houses which match the criteria. The application has a main form which is split into 4 pages
 - Name
 - Email
 - Phone
@@ -151,7 +151,7 @@ The entire application is responsive. Grid and flex has been used to display an 
 
 The application handles errors gracefully. The application checks for the response status. If the route is not present an Error component is shown to the user with the corresponding error message.
 
-## Future Implementation
+## Future Improvements
 
 - Ability to process the information with an API
 - Validation for phone number based on the country
