@@ -13,7 +13,7 @@ const TextInput: Function = React.lazy(() =>
 
 const Name:React.FC = () => {
   const { t } = useTranslation();
-
+  const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
   return (
     <fieldset className="form-fieldset">
       <legend className="form-legend">{t('Enter your name')}</legend>
@@ -22,13 +22,13 @@ const Name:React.FC = () => {
           id="first-name"
           type="text"
           placeholder={t('First Name')}
-          pattern={/^[a-zA-Z]+$/}
+          pattern={nameRegex}
         ></TextInput>
         <TextInput
           id="last-name"
           type="text"
           placeholder={t('Last Name')}
-          pattern={/^[a-zA-Z]+$/}
+          pattern={nameRegex}
         ></TextInput>
       </div>
       <Navigation next={1} field="name"/>
