@@ -3698,7 +3698,7 @@ exports[`<App> Renders without exploding 1`] = `
                                   >
                                     <TextInput
                                       id="first-name"
-                                      pattern={/\\^\\[a-zA-Z\\]\\+\\$/}
+                                      pattern={/\\^\\[a-zA-Z\\]\\+\\(\\(\\[',\\. -\\]\\[a-zA-Z \\]\\)\\?\\[a-zA-Z\\]\\*\\)\\*\\$/}
                                       placeholder="First Name"
                                       type="text"
                                     >
@@ -3721,7 +3721,7 @@ exports[`<App> Renders without exploding 1`] = `
                                     </TextInput>
                                     <TextInput
                                       id="last-name"
-                                      pattern={/\\^\\[a-zA-Z\\]\\+\\$/}
+                                      pattern={/\\^\\[a-zA-Z\\]\\+\\(\\(\\[',\\. -\\]\\[a-zA-Z \\]\\)\\?\\[a-zA-Z\\]\\*\\)\\*\\$/}
                                       placeholder="Last Name"
                                       type="text"
                                     >
