@@ -32,8 +32,8 @@
     "typescript": "3.6.3"
   },
   "scripts": {
-    "start": "set NODE_ENV=development && react-scripts start",
-    "build": "NODE_ENV=production && npm run test && npm run build",
+    "start": "react-scripts start",
+    "build": "CI=true npm test && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
